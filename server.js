@@ -9,7 +9,6 @@ const DATA_FILE = path.join(__dirname, 'public', 'catalogo.json');
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/productos', express.static(path.join(__dirname, 'productos')));
 
 // Endpoint protegido para guardar el catálogo
 app.post('/api/guardar-catalogo', (req, res) => {

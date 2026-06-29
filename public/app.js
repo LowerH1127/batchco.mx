@@ -655,7 +655,7 @@ function createProductCard(product) {
   img.src = `${IMAGE_FOLDER}/${product.sku}.webp`;
   img.alt = product.name;
   img.loading = 'lazy';
-  img.className = 'w-full h-full object-contain p-4 group-hover:scale-105 transition duration-300';
+  img.className = 'w-full h-full object-cover group-hover:scale-105 transition duration-300';
   img.addEventListener('error', () => handleImageFallback(img, product.sku));
 
   const fallback = document.createElement('div');
@@ -949,7 +949,7 @@ function submitAdminPassword() {
     DOM.adminPasswordModal.classList.add('hidden');
     DOM.adminPanel.classList.remove('hidden');
     DOM.adminPanel.scrollIntoView({ behavior: 'smooth' });
-    showToast('Acceso concedido');
++    showToast('Acceso concedido');
   } else {
     DOM.adminPasswordError.classList.remove('hidden');
     DOM.adminPasswordInput.value = '';
