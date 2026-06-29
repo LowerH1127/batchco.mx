@@ -649,13 +649,13 @@ function createProductCard(product) {
   card.className = 'bg-black border border-neutral-900 rounded-none p-6 flex flex-col justify-between hover:border-neutral-700 transition-all duration-200 group';
 
   const imageWrapper = document.createElement('div');
-  imageWrapper.className = 'w-full bg-neutral-950 aspect-[4/5] rounded-none mb-5 flex items-center justify-center overflow-hidden border border-neutral-900 relative';
+  imageWrapper.className = 'w-full bg-white aspect-[4/5] rounded-none mb-5 flex items-center justify-center overflow-hidden border border-neutral-200 relative';
 
   const img = document.createElement('img');
   img.src = `${IMAGE_FOLDER}/${product.sku}.webp`;
   img.alt = product.name;
   img.loading = 'lazy';
-  img.className = 'w-full h-full object-cover group-hover:scale-105 transition duration-300';
+  img.className = 'w-full h-full object-contain p-2 group-hover:scale-105 transition duration-300';
   img.addEventListener('error', () => handleImageFallback(img, product.sku));
 
   const fallback = document.createElement('div');
