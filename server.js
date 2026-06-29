@@ -44,6 +44,11 @@ app.get('/api/catalogo', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Batch Co. Server online — puerto ${PORT}`);
-});
+// Solo escuchar en desarrollo local; Vercel usa module.exports
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Batch Co. Server online — puerto ${PORT}`);
+  });
+}
+
+module.exports = app;
